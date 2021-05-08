@@ -1,4 +1,4 @@
-# daunet
-DAUNet: Deep Augmented Neural Network for Pavement Crack Segmentation
+# DAUNet
+Deep Augmented Neural Network for Pavement Crack Segmentation
 
 # UNDER CONSTRUCTION #
