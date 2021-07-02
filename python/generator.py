@@ -99,6 +99,9 @@ class Generator(keras.utils.Sequence):
         """
         Keras sequence method for generating batches.
         """
+        """
+        Keras sequence method for generating batches.
+        """
         inputs=np.zeros((self.batch_size,256,256,3),np.float32)
         targets=np.zeros((self.batch_size,256,256),np.float32)
         for i in range(self.batch_size):
@@ -107,18 +110,21 @@ class Generator(keras.utils.Sequence):
                 self.on_epoch_end()
             img=self.images[idx].copy()
             label=self.labels[idx].copy()
-            s0=randint(0,img.shape[0]-512)
-            s1=randint(0,img.shape[1]-512)
-            img=img[s0:s0+512,s1:s1+512]
+            for j in range(1000):
+                s0=randint(0,img.shape[0]-512)
+                s1=randint(0,img.shape[1]-512)
+                cr=label[s0:s0+512,s1:s1+512].sum()
+                if cr>3200000: 
+                    break
             label=label[s0:s0+512,s1:s1+512]
+            img=img[s0:s0+512,s1:s1+512]
             s0=randint(0,img.shape[0]-256)
             s1=randint(0,img.shape[1]-256)
             if self.transform_generator is not None:
                 transform = adjust_transform_for_image(next(self.transform_generator), inputs[i], True)
                 # apply visual effect
                 visual_effect = next(self.visual_effect_generator)
-                img = visual_effect(img)
-                inputs[i] = apply_transform(transform, img)[s0:s0+256,s1:s1+256]
+                inputs[i] = visual_effect(apply_transform(transform, img)[s0:s0+256,s1:s1+256])
                 targets[i] = apply_transform(transform, label)[s0:s0+256,s1:s1+256]
             else:
                 inputs[i]=img[s0:s0+256,s1:s1+256]

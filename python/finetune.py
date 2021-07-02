@@ -44,9 +44,9 @@ def get_lr_metric(optimizer):
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
-batch_size=8 # 16
-learning_rate_base=0.01#0.002
-total_epochs=20#100
+batch_size=8
+learning_rate_base=0.0001
+total_epochs=100
 steps_per_epoch=1896//batch_size
 
 train_data = trainGenerator(batch_size=batch_size)
