@@ -5,8 +5,6 @@ import os
 import keras
 from keras.callbacks import TensorBoard
 import tensorflow as tf
-import matplotlib.pyplot as plt
-from keras.callbacks import CSVLogger
 import numpy as np
 from math import ceil
 from glob import glob
@@ -16,7 +14,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 model = sm.Unet("resnet18", classes=1,activation="sigmoid",encoder_weights=None)
 print(model.summary())
-model.load_weights('Unet-EMA-Soft-resnet18-focal-pretrained-bs8-newaug-crop-aspect-reflect-color-full400.hdf5')
+model.load_weights('../model/DAUNet-finetuned.hdf5')
 test_path = "test-cracks500croped"
 save_path = "predicted400full"
 i=0

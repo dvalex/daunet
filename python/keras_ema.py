@@ -9,9 +9,11 @@
 import numpy as np
 import scipy.sparse as sp
 
-from keras import backend as K
-from keras.callbacks import Callback
-from keras.models import load_model
+from tensorflow import keras
+import tensorflow as tf
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.models import load_model
 #from keras.engine.training import collect_trainable_weights
 
 import sys

@@ -1,5 +1,5 @@
-from keras import backend as K
-from keras.losses import binary_crossentropy
+from tensorflow.keras import backend as K
+from tensorflow.keras.losses import binary_crossentropy
 import tensorflow as tf
 import numpy as np
 def dice_coeff(y_true, y_pred):
@@ -14,9 +14,9 @@ def dice_loss(y_true, y_pred):
     return loss
 
 def weighted_binary_crossentropy(y_true, y_pred):#ponderacion de pesos para darle mayor peso a la clase=1
-	zero_weight=1
-	one_weight=4
-	b_ce = K.binary_crossentropy(y_true, y_pred)
-	weight_vector = y_true * one_weight + (1. - y_true) * zero_weight
-	weighted_b_ce = weight_vector * b_ce
-	return K.mean(weighted_b_ce)
+    zero_weight=1
+    one_weight=4
+    b_ce = K.binary_crossentropy(y_true, y_pred)
+    weight_vector = y_true * one_weight + (1. - y_true) * zero_weight
+    weighted_b_ce = weight_vector * b_ce
+    return K.mean(weighted_b_ce)
