@@ -3,7 +3,8 @@ Deep Augmented Neural Network for Pavement Crack Segmentation
 
 ## INSTALLATION
 
-```git clone https://github.com/dvalex/daunet
+```
+git clone https://github.com/dvalex/daunet
 cd daunet/python
 pip install -r requirements.txt
 ```
@@ -11,7 +12,8 @@ pip install -r requirements.txt
 
 Unix users can use data/download.sh script to automate:
 
-```cd data
+```
+cd daunet/data
 bash download.sh
 ```
 ### Manual
@@ -23,14 +25,28 @@ For evaluating: download testcrop.zip from [Google Drive](https://drive.google.c
 Unzip it into data/testcrop subfolder
 
 ## TRAINING
-```export SM_FRAMEWORK=tf.keras
+```
+cd daunet/python
+export SM_FRAMEWORK=tf.keras
 ```
 
 ### First stage
-```python train.py
+```
+python train.py
 ```
 
 ### Second stage
-```python finetune.py
+```
+python finetune.py
 ```
 
+## INFERENCE AND EVALUATION
+To run inference at all images in directory (by default data/testcrop) run 
+```
+cd daunet/python
+python inference.py
+```
+
+After that one can calculate AIU, ODS, OIS, sODS, sOIS using matlab evaluation scripts
+
+ 

@@ -2,9 +2,6 @@
 import segmentation_models as sm
 import cv2
 import os
-import keras
-from keras.callbacks import TensorBoard
-import tensorflow as tf
 import numpy as np
 from math import ceil
 from glob import glob
@@ -15,8 +12,8 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 model = sm.Unet("resnet18", classes=1,activation="sigmoid",encoder_weights=None)
 print(model.summary())
 model.load_weights('../model/DAUNet-finetuned.hdf5')
-test_path = "test-cracks500croped"
-save_path = "predicted400full"
+test_path = "../data/testcrop"
+save_path = "predicted"
 i=0
 print(test_path+'/*.jpg')
 for fn in glob(test_path+'/*.jpg',recursive=True):
