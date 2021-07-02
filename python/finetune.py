@@ -7,12 +7,12 @@ from tensorflow.keras.callbacks import TensorBoard
 from tensorflow.keras.callbacks import CSVLogger
 import segmentation_models as sm
 from keras_ema import ExponentialMovingAverage
-import tensorflow_addons as tfa
+#import tensorflow_addons as tfa
 from metrics2 import dice_loss
 from metrics2 import weighted_binary_crossentropy
 from generator import Generator
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from keras import backend as K
+from tensorflow.keras import backend as K
 import cv2
 import numpy as np
 
@@ -28,7 +28,7 @@ class BinaryFocalLossWithIgnore(sm.losses.BinaryFocalLoss):
     
 
 def trainGenerator(batch_size):
-     train_generator = Generator("cracks500","cracks500", batch_size)
+     train_generator = Generator("../data/cracks500","../data/cracks500", batch_size)
      index=0
      for (img, label) in train_generator:
          img=np.asarray(img,np.float32)/255
@@ -41,7 +41,7 @@ def get_lr_metric(optimizer):
         return optimizer.lr
     return lr
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 batch_size=8 # 16
