@@ -1,5 +1,5 @@
 Contains a function for sODS/sOIS computation:
-SIMPLIFIED_ODS_OIS(RESULTSDIR, DATASET, METHOD)
+simplified_ods_ois(ResultsDir, Dataset, Method)
 
 Parameters:
 - ResultsDir - segmentation relults are located
