@@ -1,6 +1,12 @@
 # DAUNet
 Deep Augmented Neural Network for Pavement Crack Segmentation
 
+This repository contains trained model reported in the paper:
+
+V.Polovnikov, D. Alekseev, I. Vinogradov, G. Lashkia, 
+DAUNet: Deep Augmented Neural Network for Pavement Crack Segmentation, IEEE Access, Vol.9, 2021. [https://ieeexplore.ieee.org/document/9531629]
+
+
 ## INSTALLATION
 
 ```
