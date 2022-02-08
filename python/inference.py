@@ -11,7 +11,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 model = sm.Unet("resnet18", classes=1,activation="sigmoid",encoder_weights=None)
 print(model.summary())
-model.load_weights('../model/DAUNet-finetuned.hdf5')
+model.load_weights('../model2/DAUNet-finetuned.hdf5')
 test_path = "../data/testcrop"
 save_path = "predicted"
 i=0
