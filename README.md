@@ -24,7 +24,7 @@ bash download.sh
 ```
 ### Manual
 
-For training: download crack500.zip from [Google Drive](https://drive.google.com/file/d/1q6pQb0xifQULmvIHh9qXlNT6-qz0k5lx/view?usp=sharing)
+For training: download crack500.zip from [Google Drive](https://drive.google.com/open?id=1LGyeb2fgJ8JGOBlQkTR6ZXVivnvb0OWc&authuser=dvalex12345%40gmail.com&usp=drive_fs)
 Unzip it into data/cracks500 subfolder
 
 For evaluating: download testcrop.zip from [Google Drive](https://drive.google.com/file/d/1u7wuaQHWWUtF5ON0MhGXcjwbfItniIK5/view?usp=sharing)
